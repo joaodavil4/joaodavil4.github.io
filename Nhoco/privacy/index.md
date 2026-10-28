@@ -1,9 +1,10 @@
 ---
+layout: doc
+app: Nhoco
 permalink: /Nhoco/privacy/
 title: Nhoco privacy policy
+heading: Privacy policy
 ---
-
-# Nhoco privacy policy
 
 [English](#english) · [Português](#português) · [Español](#español)
 

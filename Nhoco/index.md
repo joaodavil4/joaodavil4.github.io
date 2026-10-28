@@ -1,10 +1,9 @@
 ---
+layout: app
+app: Nhoco
 permalink: /Nhoco/
 title: Nhoco
 ---
 
-# Nhoco
-
-Card games for friends: Dorminhoco and Bate!
-
-- [Privacy policy](/Nhoco/privacy/)
+Nhoco brings two Brazilian card games, Dorminhoco and Bate!, to your phone. Play with friends
+online with a room code, with people nearby over Bluetooth, or against bots.

@@ -1,0 +1,6 @@
+title: João D'Avila
+description: Small, kind apps for iPhone and Android. Privacy policies and support.
+url: https://joaodavil4.github.io
+markdown: kramdown
+exclude:
+  - README.md

@@ -1,9 +1,10 @@
 ---
+layout: doc
+app: Zibao
 permalink: /Zibao/support/
 title: Zibao support
+heading: Support
 ---
-
-# Zibao support
 
 Zibao is a Mandarin flashcard app for iPhone and Apple Watch.
 

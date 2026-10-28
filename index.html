@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<section class="home-hero">
+  <h1>Small, kind apps.</h1>
+  <p class="lede">I'm João, a mobile engineer. These are the apps I make on my own: no ads, no tracking, no accounts. Their privacy policies and support pages live here.</p>
+</section>
+
+<section class="app-grid" aria-label="Apps">
+  {%- for app in site.data.apps %}
+  <article class="app-card" style="--accent: {{ app.accent }}; --tint: {{ app.tint }}">
+    <a class="app-card-main" href="{{ '/' | append: app.slug | append: '/' | relative_url }}">
+      <div class="app-icon">{% capture icon %}icon-{{ app.slug }}.svg{% endcapture %}{% include {{ icon }} %}</div>
+      <div>
+        <h2>{{ app.name }}</h2>
+        <p>{{ app.tagline }}</p>
+        <p class="chips">
+          {%- for p in app.platforms %}<span class="chip">{{ p }}</span>{% endfor -%}
+          {%- if app.status %}<span class="chip chip-status">{{ app.status }}</span>{% endif -%}
+        </p>
+      </div>
+    </a>
+    <p class="app-card-links">
+      {%- if app.support %}<a href="{{ '/' | append: app.slug | append: '/support/' | relative_url }}">Support</a>{% endif %}
+      <a href="{{ '/' | append: app.slug | append: '/privacy/' | relative_url }}">Privacy</a>
+    </p>
+  </article>
+  {%- endfor %}
+</section>
+
+<section class="about">
+  <p>Also: <a href="{{ '/html-johnpage/' | relative_url }}">my portfolio</a> · <a href="https://github.com/joaodavil4">GitHub</a></p>
+</section>

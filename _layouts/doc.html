@@ -1,0 +1,15 @@
+---
+layout: default
+---
+{%- assign app = site.data.apps | where: "slug", page.app | first -%}
+<article class="doc">
+  <header class="doc-header">
+    <div class="doc-icon">{% capture icon %}icon-{{ app.slug }}.svg{% endcapture %}{% include {{ icon }} %}</div>
+    <p class="eyebrow">{{ app.name }}</p>
+    <h1>{{ page.heading | default: page.title }}</h1>
+    {%- if page.updated %}<p class="updated">Last updated {{ page.updated }}</p>{% endif %}
+  </header>
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>

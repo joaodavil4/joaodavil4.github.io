@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- assign app = nil -%}
+  {%- if page.app %}{% assign app = site.data.apps | where: "slug", page.app | first %}{% endif -%}
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: app.tagline | default: site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231d2a2c'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='34' font-family='Georgia,serif' fill='%23fffaf2'%3Ej%3C/text%3E%3C/svg%3E">
+</head>
+<body{% if app %} style="--accent: {{ app.accent }}; --tint: {{ app.tint }}"{% endif %}>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="{{ '/' | relative_url }}"><span class="brand-mark">j</span>João D'Avila</a>
+      {%- if app %}
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="{{ '/' | relative_url }}">Apps</a><span aria-hidden="true">/</span>
+        <a href="{{ '/' | append: app.slug | append: '/' | relative_url }}">{{ app.name }}</a>
+      </nav>
+      {%- endif %}
+    </div>
+  </header>
+
+  <main class="wrap">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© {{ site.time | date: "%Y" }} João D'Avila</span>
+      <span>No ads. No tracking. No accounts.</span>
+    </div>
+  </footer>
+</body>
+</html>

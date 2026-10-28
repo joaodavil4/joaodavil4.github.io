@@ -1,0 +1,23 @@
+# Shown on the home page, in this order. `slug` is the folder name; keep it stable,
+# shipped builds and store listings link to /<slug>/privacy/ and /<slug>/support/.
+- slug: Morf
+  name: Morf
+  tagline: A little pearl blob with a life of its own.
+  platforms: [Android, iPhone]
+  status: Coming soon
+  support: true
+  accent: "#3f9d8f"
+  tint: "#e3f4ef"
+- slug: Zibao
+  name: Zibao
+  tagline: Mandarin flashcards for iPhone and Apple Watch.
+  platforms: [iPhone, Apple Watch]
+  support: true
+  accent: "#c8463b"
+  tint: "#fbe9e5"
+- slug: Nhoco
+  name: Nhoco
+  tagline: "Card games for friends: Dorminhoco and Bate!"
+  platforms: [Android]
+  accent: "#2f5fb3"
+  tint: "#e6edf9"

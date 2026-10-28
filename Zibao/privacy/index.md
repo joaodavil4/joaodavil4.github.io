@@ -1,13 +1,13 @@
 ---
+layout: doc
+app: Zibao
 permalink: /Zibao/privacy/
 title: Zibao privacy policy
+heading: Privacy policy
+updated: 22 October 2026
 ---
 
-# Zibao privacy policy
-
-Last updated: 22 October 2026.
-
-**Zibao does not collect, sell or share personal data.**
+> Zibao does not collect, sell or share personal data.
 
 - **What stays on your device:** your progress, settings, review history and custom words are stored only on your device, in the app's own storage.
 - **No accounts, no analytics, no ads, no tracking.** The app has no servers and contains no third-party SDKs.

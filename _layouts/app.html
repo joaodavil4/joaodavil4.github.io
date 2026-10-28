@@ -1,0 +1,30 @@
+---
+layout: default
+---
+{%- assign app = site.data.apps | where: "slug", page.app | first -%}
+<section class="app-hero">
+  <div class="app-icon">{% capture icon %}icon-{{ app.slug }}.svg{% endcapture %}{% include {{ icon }} %}</div>
+  <div>
+    <h1>{{ app.name }}</h1>
+    <p class="lede">{{ app.tagline }}</p>
+    <p class="chips">
+      {%- for p in app.platforms %}<span class="chip">{{ p }}</span>{% endfor -%}
+      {%- if app.status %}<span class="chip chip-status">{{ app.status }}</span>{% endif -%}
+    </p>
+  </div>
+</section>
+
+<div class="prose">
+  {{ content }}
+</div>
+
+<div class="link-cards">
+  {%- if app.support %}
+  <a class="link-card" href="{{ '/' | append: app.slug | append: '/support/' | relative_url }}">
+    <strong>Support</strong><span>Questions, bugs and feedback</span>
+  </a>
+  {%- endif %}
+  <a class="link-card" href="{{ '/' | append: app.slug | append: '/privacy/' | relative_url }}">
+    <strong>Privacy policy</strong><span>What {{ app.name }} keeps, and what it doesn't</span>
+  </a>
+</div>
