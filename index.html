@@ -9,8 +9,8 @@ layout: default
 <section class="app-grid" aria-label="Apps">
   {%- for app in site.data.apps %}
   <article class="app-card" style="--accent: {{ app.accent }}; --tint: {{ app.tint }}">
-    <a class="app-card-main" href="{{ '/' | append: app.slug | append: '/' | relative_url }}">
-      <div class="app-icon">{% capture icon %}icon-{{ app.slug }}.svg{% endcapture %}{% include {{ icon }} %}</div>
+    <a class="app-card-main" href="{% if app.url %}{{ app.url }}{% else %}{{ '/' | append: app.slug | append: '/' | relative_url }}{% endif %}">
+      <div class="app-icon">{% if app.icon %}<img src="{{ app.icon | relative_url }}" alt="">{% else %}{% capture icon %}icon-{{ app.slug }}.svg{% endcapture %}{% include {{ icon }} %}{% endif %}</div>
       <div>
         <h2>{{ app.name }}</h2>
         <p>{{ app.tagline }}</p>
@@ -21,8 +21,13 @@ layout: default
       </div>
     </a>
     <p class="app-card-links">
+      {%- if app.url %}
+      <a href="{{ app.url }}support">Support</a>
+      <a href="{{ app.url }}privacy">Privacy</a>
+      {%- else %}
       {%- if app.support %}<a href="{{ '/' | append: app.slug | append: '/support/' | relative_url }}">Support</a>{% endif %}
       <a href="{{ '/' | append: app.slug | append: '/privacy/' | relative_url }}">Privacy</a>
+      {%- endif %}
     </p>
   </article>
   {%- endfor %}
